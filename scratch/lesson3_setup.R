@@ -17,3 +17,5 @@ download.file("https://ndownloader.figshare.com/files/2292169",
 
 #create scratch script
 file.edit("scratch/lesson3.R") #saves and opens new script in RStudio with that name and saved in that folder
+
+file.edit("reports/index.qmd") #used for this week's assessment

@@ -93,5 +93,19 @@ surveys %>%
 surveys %>% 
   drop_na(weight) %>%
   group_by(year) %>%
-  mutate(chunky_animal = max(weight)) %>%
+  arrange(desc(weight)) %>%
+  slice(1) %>%
   select(year, genus, species_id, chunky_animal) 
+
+#joins 
+count(surveys, taxa)
+taxa_iucn <- data.frame(
+  taxa = c("Bird", "Rabbit", "Rodent"),
+  iucn = c("NT", "LC", "LC")
+)
+taxa_iucn
+
+surveys_iucn <- left_join(surveys, taxa_iucn, by = "taxa")
+head(surveys_iucn)
+
+
